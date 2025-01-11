@@ -1,0 +1,36 @@
+services:
+  project-redis:
+    container_name: project-redis
+    image: "redis/redis-stack:latest"
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+    networks:
+      - web
+  
+  project-redisinsight:
+    container_name: project-redisinsight
+    image: "redis/redisinsight:latest"
+    restart: unless-stopped
+    ports:
+      - 5540:5540
+    networks:
+      - web
+
+  project-mysql:
+    container_name: project-mysql
+    image: mysql:8.1
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+    networks:
+      - web
+    environment:
+      MYSQL_DATABASE: project
+      MYSQL_ROOT_PASSWORD: parola123!
+
+networks:
+  web:
+    name: web
+    driver: bridge

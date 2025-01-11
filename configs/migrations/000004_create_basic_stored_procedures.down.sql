@@ -1,0 +1,11 @@
+DROP PROCEDURE GetUserByUuid;
+DROP PROCEDURE GetUserByEmail;
+DROP PROCEDURE CreateUser;
+DROP PROCEDURE GetDepartmentByUuid;
+DROP PROCEDURE GetDepartmentUsers;
+DROP PROCEDURE GetActiveDepartments;
+DROP PROCEDURE GetApprovedDepartments;
+DROP PROCEDURE GetExistingDepartments;
+DROP PROCEDURE GetAllDepartments;
+DROP PROCEDURE AddUserInDepartment;
+DROP PROCEDURE DeleteUserFromDepartment;
